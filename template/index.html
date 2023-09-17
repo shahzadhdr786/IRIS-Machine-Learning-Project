@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flower Classifier</title>
+    <style>
+        body {
+            text-align: center; /* Center-align the content horizontally */
+        }
+
+        @keyframes rotateText {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .rotating-heading-container {
+            overflow: hidden;
+        }
+
+        .rotating-heading {
+            font-size: 24px;
+            font-weight: bold;
+            white-space: nowrap;
+            animation: rotateText 15s linear infinite;
+        }
+
+        form {
+            margin-top: 20px; /* Add some top margin to the form */
+        }
+    </style>
+</head>
+<body>
+    <div class="rotating-heading-container">
+        <h1 class="rotating-heading"> IRIS Project Created By Shahzad Haidari</h1>
+    </div>
+    <p>Enter the following information to predict the class of a flower:</p>
+    <form action='/predict' method="POST">
+        Sepal Length: <input type='text' name='sepal_length'><br>
+        Sepal Width: <input type='text' name='sepal_width'><br>
+        Petal Length: <input type='text' name='petal_length'><br>
+        Petal Width: <input type='text' name='petal_width'><br>
+        Class: {{result}} <br>
+        <input type='submit' value='Predict'>
+    </form>
+</body>
+</html>
+
